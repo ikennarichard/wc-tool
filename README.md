@@ -81,7 +81,7 @@ Install dependencies:
 - Print byte count:
 
 ```sh
-  ./ccwc.rb -c file name
+  ./ccwc.rb -c file-name
 ```
 
 ### Run linters
@@ -136,7 +136,7 @@ Please give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Hat tip to [Coding Challenges]('https://codingchallenges.fyi') team for inspiring this project.
+Hat tip to [Coding Challenges](https://codingchallenges.fyi) team for inspiring this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
