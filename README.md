@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>ccwc</b></h3>
+  <h2><b>ccwc</b></h2>
 
 </div>
 
@@ -29,7 +29,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 ccwc <a name="about-project"></a>
+# 📖 ccwc - Coding Challenges Word Count Tool <a name="about-project"></a>
 
   This is a version of the Unix command line tool wc!
 
