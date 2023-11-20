@@ -8,6 +8,4 @@ module CountOptions
       puts "ccwc: #{file_path}: No such file or directory"
     end
   end
-
-
 end

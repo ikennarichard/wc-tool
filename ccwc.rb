@@ -6,9 +6,9 @@ require_relative 'utils'
 options = {}
 
 OptionParser.new do |opts|
-  opts.banner = "Usage: ./ccwc.rb [OPTION]... [FILE]..."
+  opts.banner = 'Usage: ./ccwc.rb [OPTION]... [FILE]...'
 
-  opts.on("-c", "--bytes", "print the byte count") do |c|
+  opts.on('-c', '--bytes', 'print the byte count') do |c|
     options[:bytes] = c
   end
 end.parse!
