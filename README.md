@@ -81,7 +81,7 @@ Install dependencies:
 - Print byte count:
 
 ```sh
-  ./ccwc.rb -c < file name >
+  ./ccwc.rb -c file name
 ```
 
 ### Run linters
