@@ -44,6 +44,7 @@
 ### Key Features <a name="key-features"></a>
 
 - Output the number of bytes in a file `(-c or --bytes option)`.
+- Output the number of lines in a file `(-l or --lines)`.
 - Provides usage instructions and error handling.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -78,10 +79,16 @@ Install dependencies:
 
 ### Usage
 
-- Print byte count:
+- Print the byte count:
 
 ```sh
   ./ccwc.rb -c file-name
+```
+
+- Print the line count:
+
+```sh
+  ./ccwc.rb -l file-name
 ```
 
 ### Run linters
@@ -98,7 +105,7 @@ This project uses RuboCop, a static code analyzer (a.k.a linter) and formatter f
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Author**
 
 - GitHub: [ikennarichard](https://github.com/ikennarichard)
 - LinkedIn: [Ikenna](https://linkedin.com/in/ikenna-richard)
@@ -109,7 +116,6 @@ This project uses RuboCop, a static code analyzer (a.k.a linter) and formatter f
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Output the number of lines in a file `(-l or --lines)`.
 - Output the number of words in a file `(-w or --words)`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
