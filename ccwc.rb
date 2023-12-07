@@ -10,32 +10,33 @@ options = {}
 OptionParser.new do |opts|
   opts.banner = 'Usage: ccwc [OPTION]... [FILE]...'
 
-  opts.on('-c', '--bytes', 'print the byte counts') do |c|
-    options[:bytes] = c
+  opts.on('-c', '--bytes', 'print the byte counts') do
+    options[:bytes] = true
   end
 
-  opts.on('-l', '--lines', 'print the line counts') do |l|
-    options[:lines] = l
+  opts.on('-l', '--lines', 'print the line counts') do
+    options[:lines] = true
   end
 
-  opts.on('-w', '--words', 'print the word counts') do |w|
-    options[:words] = w
+  opts.on('-w', '--words', 'print the word counts') do
+    options[:words] = true
   end
 
-  opts.on('-m', '--chars', 'print the character counts') do |m|
-    options[:chars] = m
+  opts.on('-m', '--chars', 'print the character counts') do
+    options[:chars] = true
   end
 end.parse!
 
+# get first variable in the array
 file_path = ARGV.first
 
-if file_path.nil? && options[:lines] == false
+unless file_path || options[:lines]
   puts 'File path is missing. Usage: ccwc [OPTION] [FILE]'
   exit 1
 end
 
 if file_path.nil? && options[:lines] && !$stdin.tty?
-  CountOptions.print_input_lines_count(ARGF)
+  CountOptions.print_input_lines_count($stdin)
 elsif file_path && File.exist?(file_path)
   if options[:bytes]
     CountOptions.count_bytes(file_path)
@@ -46,7 +47,7 @@ elsif file_path && File.exist?(file_path)
   elsif options[:chars]
     CountOptions.count_chars(file_path)
   else
-    CountOptions.print_all(file_path)
+    CountOptions.print_default(file_path)
   end
 else
   puts "ccwc: #{file_path}: No such file or directory" unless file_path.nil?
