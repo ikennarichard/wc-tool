@@ -32,7 +32,7 @@ module CountOptions
   end
 
   # read from stdin if theres no filename
-  def self.print_input_lines_count(input)
+  def self.print_input_lines(input)
     line_count = 0
     input.each_line do
       line_count += 1
