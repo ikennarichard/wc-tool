@@ -1,11 +1,11 @@
 module CountOptions
-  # print byte count
+  # print byte counts
   def self.count_bytes(file_path)
     byte_count = File.size(file_path)
     puts "#{byte_count} #{file_path}"
   end
 
-  # print line count
+  # print line counts
   def self.count_lines(file_path)
     line_count = File.foreach(file_path).count
     puts "#{line_count} #{file_path}"
@@ -32,7 +32,7 @@ module CountOptions
   end
 
   # read from stdin if theres no filename
-  def self.print_input_lines(input)
+  def self.print_input_lines_count(input)
     line_count = 0
     input.each_line do
       line_count += 1
