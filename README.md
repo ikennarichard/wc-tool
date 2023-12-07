@@ -31,7 +31,8 @@
 
 # 📖 ccwc - Coding Challenges Word Count Tool <a name="about-project"></a>
 
-  This is a version of the  **wc** Unix command line tool
+  This is a version of the  **wc** Unix command line tool.
+  - [Demo](https://www.loom.com/share/d198b9d0e71d472c85e0b923937acd4d?sid=c491fe83-9040-4b6f-bc98-569db2382ee3)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -113,7 +114,7 @@ Install dependencies:
   cat file-name | ccwc -l
 ```
 
-> If the `ccwc` command dosent work, try using `./ccwc.rb`
+> If your on windows you will need to run `./ccwc.rb`
 
 ### Run linters
 
@@ -166,7 +167,7 @@ Please give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Hat tip to [Coding Challenges](https://codingchallenges.fyi) team for inspiring this project.
+Hat tip to [Coding Challenges](https://codingchallenges.fyi) by John Crickett for inspiring this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
