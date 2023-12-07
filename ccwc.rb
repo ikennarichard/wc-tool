@@ -25,7 +25,14 @@ if file_path.nil?
   exit 1
 end
 
-if File.exist?(file_path)
+if file_path.nil? && options[:lines] == false
+  puts 'File path is missing. Usage: ccwc [OPTION] [FILE]'
+  exit 1
+end
+
+if file_path.nil? && options[:lines] && !$stdin.tty?
+  CountOptions.print_input_lines(ARGF)
+elsif file_path && File.exist?(file_path)
   if options[:bytes]
     CountOptions.count_bytes(file_path)
   elsif options[:lines]
