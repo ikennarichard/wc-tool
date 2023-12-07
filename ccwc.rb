@@ -30,6 +30,10 @@ if File.exist?(file_path)
     CountOptions.count_bytes(file_path)
   elsif options[:lines]
     CountOptions.count_lines(file_path)
+  elsif options[:words]
+    CountOptions.count_words(file_path)
+  elsif options[:chars]
+    CountOptions.count_chars(file_path)
   else
     puts 'Please specify an option (-c or -l).'
   end
