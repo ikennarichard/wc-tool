@@ -1,29 +1,33 @@
 #!/usr/bin/env ruby
-# Save as `ccwc`, then `chmod 755 ccwc.rb`, and run as `./ccwc.rb`.
+# Save as `ccwc`, then `chmod 755 ccwc.rb`, and run as `ccwc or ./ccwc.rb`.
 
 require 'optparse'
 require_relative 'utils'
 
+
 options = {}
 
 OptionParser.new do |opts|
-  opts.banner = 'Usage: ./ccwc.rb [OPTION]... [FILE]...'
+  opts.banner = 'Usage: ccwc [OPTION]... [FILE]...'
 
-  opts.on('-c', '--bytes', 'print the byte count') do |c|
+  opts.on('-c', '--bytes', 'print the byte counts') do |c|
     options[:bytes] = c
   end
 
-  opts.on('-l', '--lines', 'print the line count') do |l|
+  opts.on('-l', '--lines', 'print the line counts') do |l|
     options[:lines] = l
+  end
+
+  opts.on('-w', '--words', 'print the word counts') do |w|
+    options[:words] = w
+  end
+
+  opts.on('-m', '--chars', 'print the character counts') do |c|
+    options[:chars] = c
   end
 end.parse!
 
 file_path = ARGV.first
-
-if file_path.nil?
-  puts 'File path is missing. Usage: ./ccwc.rb [OPTION] [FILE]'
-  exit 1
-end
 
 if file_path.nil? && options[:lines] == false
   puts 'File path is missing. Usage: ccwc [OPTION] [FILE]'
@@ -31,7 +35,7 @@ if file_path.nil? && options[:lines] == false
 end
 
 if file_path.nil? && options[:lines] && !$stdin.tty?
-  CountOptions.print_input_lines(ARGF)
+  CountOptions.print_input_lines_count(ARGF)
 elsif file_path && File.exist?(file_path)
   if options[:bytes]
     CountOptions.count_bytes(file_path)
@@ -42,8 +46,8 @@ elsif file_path && File.exist?(file_path)
   elsif options[:chars]
     CountOptions.count_chars(file_path)
   else
-    puts 'Please specify an option (-c or -l).'
+    CountOptions.print_all(file_path)
   end
 else
-  puts "ccwc: #{file_path}: No such file or directory"
+  puts "ccwc: #{file_path}: No such file or directory" unless file_path.nil?
 end
