@@ -24,14 +24,14 @@ module CountOptions
   end
 
   # print character counts
-  def self.print_all(file_path)
+  def self.print_default(file_path)
     line_count = File.foreach(file_path).count
     word_count = File.read(file_path).split(/\s+/).size
     byte_count = File.size(file_path)
     print "#{line_count} #{word_count} #{byte_count} #{file_path}"
   end
 
-  # read from stdin if theres no filename
+  # read from stdin if theres no filename and print line
   def self.print_input_lines_count(input)
     line_count = 0
     input.each_line do
