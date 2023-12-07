@@ -22,8 +22,8 @@ OptionParser.new do |opts|
     options[:words] = w
   end
 
-  opts.on('-m', '--chars', 'print the character counts') do |c|
-    options[:chars] = c
+  opts.on('-m', '--chars', 'print the character counts') do |m|
+    options[:chars] = m
   end
 end.parse!
 

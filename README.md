@@ -31,7 +31,7 @@
 
 # 📖 ccwc - Coding Challenges Word Count Tool <a name="about-project"></a>
 
-  This is a version of the Unix command line tool wc!
+  This is a version of the  **wc** Unix command line tool
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,6 +45,9 @@
 
 - Output the number of bytes in a file `(-c or --bytes option)`.
 - Output the number of lines in a file `(-l or --lines)`.
+- Output the number of words in a file `(-w or --words)`.
+- Output the number of characters in a file `(-m or --chars)`.
+- Print from standard input if no file is specified.
 - Provides usage instructions and error handling.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -60,6 +63,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 - Ensure you have Ruby installed on your system.
+- VS Code or an editor of your choice.
 
 ### Setup
 
@@ -79,17 +83,37 @@ Install dependencies:
 
 ### Usage
 
-- Print the byte count:
+- Print the byte counts:
 
 ```sh
-  ./ccwc.rb -c file-name
+  ccwc -c file-name
 ```
 
-- Print the line count:
+- Print the line counts:
 
 ```sh
-  ./ccwc.rb -l file-name
+  ccwc -l file-name
 ```
+
+- Print the word counts:
+
+```sh
+  ccwc -w file-name
+```
+
+- Print the character counts:
+
+```sh
+  ccwc -m file-name
+```
+
+- Print the from standard input if no file name is specified:
+
+```sh
+  cat file-name | ccwc -l
+```
+
+> If the `ccwc` command dosent work, try using `./ccwc.rb`
 
 ### Run linters
 
@@ -107,7 +131,7 @@ This project uses RuboCop, a static code analyzer (a.k.a linter) and formatter f
 
 👤 **Author**
 
-- GitHub: [ikennarichard](https://github.com/ikennarichard)
+- Twitter: [ikennarichard](https://twitter.com/ikennarichard_)
 - LinkedIn: [Ikenna](https://linkedin.com/in/ikenna-richard)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -116,7 +140,7 @@ This project uses RuboCop, a static code analyzer (a.k.a linter) and formatter f
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Output the number of words in a file `(-w or --words)`.
+- Not available.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
